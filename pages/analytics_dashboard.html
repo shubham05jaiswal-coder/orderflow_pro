@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Analytics Dashboard - OrderFlow Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Forderflow3893back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header -->
+    <header class="bg-surface border-b border-border shadow-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Branding -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h1 class="ml-2 text-xl font-bold text-primary">OrderFlow Pro</h1>
+                    </div>
+                    <span class="hidden md:block text-sm text-text-secondary italic">Your restaurant's digital backbone</span>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <span class="text-sm text-text-secondary">Welcome back,</span>
+                        <span class="text-sm font-medium text-text-primary">Manager Sarah</span>
+                    </div>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 19h6v-2H4v2zM4 15h8v-2H4v2zM4 11h10V9H4v2z"/>
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-surface border-r border-border shadow-subtle">
+            <nav class="mt-6 px-4">
+                <div class="space-y-2">
+                    <a href="dashboard_homepage.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="order_processing_interface.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                        Order Processing
+                    </a>
+                    <a href="menu_management_center.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        Menu Management
+                    </a>
+                    <a href="analytics_dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium text-primary bg-primary-50 rounded-lg">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        Analytics
+                    </a>
+                    <a href="receipt_designer_studio.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Receipt Designer
+                    </a>
+                </div>
+
+                <!-- Quick Actions Section -->
+                <div class="mt-8 pt-6 border-t border-border">
+                    <h3 class="px-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Quick Actions</h3>
+                    <div class="mt-3 space-y-2">
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Export Report
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-warning hover:bg-warning-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                            </svg>
+                            Compare Periods
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-error hover:bg-error-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            Alert Settings
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="p-6">
+                <!-- Header Section -->
+                <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+                    <div>
+                        <h2 class="text-2xl font-bold text-text-primary mb-2">Analytics Dashboard</h2>
+                        <p class="text-text-secondary">Transform your data into actionable business insights</p>
+                    </div>
+                    
+                    <!-- Time Period Selector -->
+                    <div class="flex items-center space-x-2 mt-4 md:mt-0">
+                        <div class="flex bg-surface border border-border rounded-lg p-1">
+                            <button class="px-3 py-1 text-sm font-medium text-primary bg-primary-50 rounded">Today</button>
+                            <button class="px-3 py-1 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded transition-colors">Week</button>
+                            <button class="px-3 py-1 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded transition-colors">Month</button>
+                            <button class="px-3 py-1 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded transition-colors">Year</button>
+                        </div>
+                        <button class="flex items-center px-4 py-2 bg-secondary text-white font-medium rounded-lg hover:bg-secondary-600 transition-colors">
+                            <svg class="w-4 h-4 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                            </svg>
+                            Export
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Key Performance Indicators -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Daily Revenue -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Today's Revenue</p>
+                                <p class="text-2xl font-bold text-text-primary font-mono">₹24,580</p>
+                                <p class="text-xs text-success-600 flex items-center mt-1">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    +12% vs yesterday
+                                </p>
+                            </div>
+                            <div class="p-3 bg-primary-100 rounded-full">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Volume -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Order Volume</p>
+                                <p class="text-2xl font-bold text-text-primary font-mono">127</p>
+                                <p class="text-xs text-success-600 flex items-center mt-1">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    +8% vs yesterday
+                                </p>
+                            </div>
+                            <div class="p-3 bg-secondary-100 rounded-full">
+                                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Average Order Value -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Avg Order Value</p>
+                                <p class="text-2xl font-bold text-text-primary font-mono">₹194</p>
+                                <p class="text-xs text-error-600 flex items-center mt-1">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M16.707 10.293a1 1 0 010 1.414l-6 6a1 1 0 01-1.414 0l-6-6a1 1 0 111.414-1.414L9 14.586V3a1 1 0 012 0v11.586l4.293-4.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    -3% vs yesterday
+                                </p>
+                            </div>
+                            <div class="p-3 bg-accent-100 rounded-full">
+                                <svg class="w-6 h-6 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Peak Hour -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Peak Hour</p>
+                                <p class="text-2xl font-bold text-text-primary">7-8 PM</p>
+                                <p class="text-xs text-text-secondary mt-1">32 orders processed</p>
+                            </div>
+                            <div class="p-3 bg-warning-100 rounded-full">
+                                <svg class="w-6 h-6 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Charts Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Sales Trend Chart -->
+                    <div class="card-elevated">
+                        <div class="p-4 border-b border-border">
+                            <h3 class="text-lg font-semibold text-text-primary">Sales Trend</h3>
+                            <p class="text-sm text-text-secondary">Revenue over time with trend analysis</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="h-64 flex items-center justify-center bg-gradient-to-br from-primary-50 to-accent-50 rounded-lg">
+                                <svg class="w-full h-full" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Grid lines -->
+                                    <defs>
+                                        <pattern id="grid" width="40" height="20" patternUnits="userSpaceOnUse">
+                                            <path d="M 40 0 L 0 0 0 20" fill="none" stroke="#E2E8F0" stroke-width="1"/>
+                                        </pattern>
+                                    </defs>
+                                    <rect width="100%" height="100%" fill="url(#grid)"/>
+                                    
+                                    <!-- Sales trend line -->
+                                    <polyline fill="none" stroke="#1E4A47" stroke-width="3" points="20,160 60,140 100,120 140,100 180,80 220,90 260,70 300,60 340,50 380,40"/>
+                                    
+                                    <!-- Data points -->
+                                    <circle cx="20" cy="160" r="4" fill="#FF7A3D"/>
+                                    <circle cx="60" cy="140" r="4" fill="#FF7A3D"/>
+                                    <circle cx="100" cy="120" r="4" fill="#FF7A3D"/>
+                                    <circle cx="140" cy="100" r="4" fill="#FF7A3D"/>
+                                    <circle cx="180" cy="80" r="4" fill="#FF7A3D"/>
+                                    <circle cx="220" cy="90" r="4" fill="#FF7A3D"/>
+                                    <circle cx="260" cy="70" r="4" fill="#FF7A3D"/>
+                                    <circle cx="300" cy="60" r="4" fill="#FF7A3D"/>
+                                    <circle cx="340" cy="50" r="4" fill="#FF7A3D"/>
+                                    <circle cx="380" cy="40" r="4" fill="#FF7A3D"/>
+                                    
+                                    <!-- Labels -->
+                                    <text x="20" y="190" text-anchor="middle" class="text-xs fill-current text-text-secondary">Mon</text>
+                                    <text x="100" y="190" text-anchor="middle" class="text-xs fill-current text-text-secondary">Wed</text>
+                                    <text x="180" y="190" text-anchor="middle" class="text-xs fill-current text-text-secondary">Fri</text>
+                                    <text x="260" y="190" text-anchor="middle" class="text-xs fill-current text-text-secondary">Sun</text>
+                                    <text x="340" y="190" text-anchor="middle" class="text-xs fill-current text-text-secondary">Tue</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Order Distribution Chart -->
+                    <div class="card-elevated">
+                        <div class="p-4 border-b border-border">
+                            <h3 class="text-lg font-semibold text-text-primary">Order Distribution</h3>
+                            <p class="text-sm text-text-secondary">Breakdown by order type and payment method</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="h-64 flex items-center justify-center">
+                                <svg class="w-48 h-48" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                                    <!-- Dine-in: 45% -->
+                                    <path d="M 100 100 L 100 20 A 80 80 0 0 1 156.56 43.44 Z" fill="#1E4A47"/>
+                                    <!-- Takeaway: 35% -->
+                                    <path d="M 100 100 L 156.56 43.44 A 80 80 0 0 1 156.56 156.56 Z" fill="#FF7A3D"/>
+                                    <!-- Delivery: 20% -->
+                                    <path d="M 100 100 L 156.56 156.56 A 80 80 0 0 1 100 180 Z" fill="#00BFA5"/>
+                                    
+                                    <!-- Legend -->
+                                    <circle cx="40" cy="160" r="4" fill="#1E4A47"/>
+                                    <text x="50" y="165" class="text-xs fill-current text-text-primary">Dine-in (45%)</text>
+                                    
+                                    <circle cx="40" cy="175" r="4" fill="#FF7A3D"/>
+                                    <text x="50" y="180" class="text-xs fill-current text-text-primary">Takeaway (35%)</text>
+                                    
+                                    <circle cx="40" cy="190" r="4" fill="#00BFA5"/>
+                                    <text x="50" y="195" class="text-xs fill-current text-text-primary">Delivery (20%)</text>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Popular Items & Staff Performance -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-8">
+                    <!-- Popular Items -->
+                    <div class="card-elevated">
+                        <div class="p-4 border-b border-border">
+                            <h3 class="text-lg font-semibold text-text-primary">Top Performing Items</h3>
+                            <p class="text-sm text-text-secondary">Ranked by sales volume and revenue</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-3 bg-success-50 border border-success-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <img src="https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=64&h=64&fit=crop" alt="Butter Chicken" class="w-10 h-10 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">Butter Chicken</p>
+                                            <p class="text-xs text-text-secondary">42 orders • ₹8,820</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-bold text-success-600">₹210</p>
+                                        <p class="text-xs text-text-secondary">avg price</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-3 bg-primary-50 border border-primary-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <img src="https://images.pixabay.com/photo/2017/12/09/08/18/pizza-3007395_640.jpg" alt="Margherita Pizza" class="w-10 h-10 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">Margherita Pizza</p>
+                                            <p class="text-xs text-text-secondary">38 orders • ₹7,220</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-bold text-primary">₹190</p>
+                                        <p class="text-xs text-text-secondary">avg price</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-3 bg-secondary-50 border border-secondary-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=64&h=64" alt="Paneer Tikka" class="w-10 h-10 rounded-lg object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">Paneer Tikka</p>
+                                            <p class="text-xs text-text-secondary">35 orders • ₹6,650</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-bold text-secondary">₹190</p>
+                                        <p class="text-xs text-text-secondary">avg price</p>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-border">
+                                    <a href="menu_management_center.html" class="block text-center text-sm text-primary hover:text-primary-700 font-medium">
+                                        View Full Menu Analytics →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Staff Performance -->
+                    <div class="card-elevated">
+                        <div class="p-4 border-b border-border">
+                            <h3 class="text-lg font-semibold text-text-primary">Staff Performance</h3>
+                            <p class="text-sm text-text-secondary">Individual metrics and efficiency scores</p>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-4">
+                                <div class="flex items-center justify-between p-3 bg-success-50 border border-success-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-success-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                            R
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">Rahul Sharma</p>
+                                            <p class="text-xs text-text-secondary">32 orders • 98% accuracy</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-bold text-success-600">2.1 min</p>
+                                        <p class="text-xs text-text-secondary">avg time</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-3 bg-primary-50 border border-primary-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-semibold">
+                                            P
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">Priya Patel</p>
+                                            <p class="text-xs text-text-secondary">28 orders • 95% accuracy</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-bold text-primary">2.4 min</p>
+                                        <p class="text-xs text-text-secondary">avg time</p>
+                                    </div>
+                                </div>
+
+                                <div class="flex items-center justify-between p-3 bg-warning-50 border border-warning-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-10 h-10 bg-warning-500 rounded-full flex items-center justify-center text-white font-semibold">
+                                            A
+                                        </div>
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">Amit Kumar</p>
+                                            <p class="text-xs text-text-secondary">24 orders • 92% accuracy</p>
+                                        </div>
+                                    </div>
+                                    <div class="text-right">
+                                        <p class="text-sm font-bold text-warning-600">2.8 min</p>
+                                        <p class="text-xs text-text-secondary">avg time</p>
+                                    </div>
+                                </div>
+
+                                <div class="pt-2 border-t border-border">
+                                    <button class="block w-full text-center text-sm text-primary hover:text-primary-700 font-medium">
+                                        View Detailed Staff Reports →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Financial Summary -->
+                <div class="card-elevated mb-8">
+                    <div class="p-4 border-b border-border">
+                        <h3 class="text-lg font-semibold text-text-primary">Financial Summary</h3>
+                        <p class="text-sm text-text-secondary">GST calculations, payment methods, and profit analysis</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                            <!-- Payment Methods -->
+                            <div>
+                                <h4 class="text-sm font-semibold text-text-primary mb-3">Payment Methods</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">Cash</span>
+                                        <span class="text-sm font-medium text-text-primary">₹8,450 (34%)</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">UPI</span>
+                                        <span class="text-sm font-medium text-text-primary">₹9,820 (40%)</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">Card</span>
+                                        <span class="text-sm font-medium text-text-primary">₹6,310 (26%)</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- GST Breakdown -->
+                            <div>
+                                <h4 class="text-sm font-semibold text-text-primary mb-3">GST Breakdown</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">CGST (9%)</span>
+                                        <span class="text-sm font-medium text-text-primary">₹1,991</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">SGST (9%)</span>
+                                        <span class="text-sm font-medium text-text-primary">₹1,991</span>
+                                    </div>
+                                    <div class="flex items-center justify-between border-t border-border pt-2">
+                                        <span class="text-sm font-medium text-text-primary">Total GST</span>
+                                        <span class="text-sm font-bold text-text-primary">₹3,982</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Profit Analysis -->
+                            <div>
+                                <h4 class="text-sm font-semibold text-text-primary mb-3">Profit Analysis</h4>
+                                <div class="space-y-2">
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">Gross Revenue</span>
+                                        <span class="text-sm font-medium text-text-primary">₹24,580</span>
+                                    </div>
+                                    <div class="flex items-center justify-between">
+                                        <span class="text-sm text-text-secondary">Cost of Goods</span>
+                                        <span class="text-sm font-medium text-error-600">₹9,832</span>
+                                    </div>
+                                    <div class="flex items-center justify-between border-t border-border pt-2">
+                                        <span class="text-sm font-medium text-text-primary">Net Profit</span>
+                                        <span class="text-sm font-bold text-success-600">₹14,748 (60%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Customer Behavior Analytics -->
+                <div class="card-elevated">
+                    <div class="p-4 border-b border-border">
+                        <h3 class="text-lg font-semibold text-text-primary">Customer Behavior Analytics</h3>
+                        <p class="text-sm text-text-secondary">Insights into customer patterns and preferences</p>
+                    </div>
+                    <div class="p-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-text-primary font-mono">68%</p>
+                                <p class="text-sm text-text-secondary">Repeat Customers</p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-secondary-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-text-primary font-mono">18 min</p>
+                                <p class="text-sm text-text-secondary">Avg Visit Duration</p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-accent-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-text-primary font-mono">4.2</p>
+                                <p class="text-sm text-text-secondary">Avg Rating</p>
+                            </div>
+
+                            <div class="text-center">
+                                <div class="w-16 h-16 bg-success-100 rounded-full flex items-center justify-center mx-auto mb-2">
+                                    <svg class="w-8 h-8 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                                    </svg>
+                                </div>
+                                <p class="text-2xl font-bold text-text-primary font-mono">2.3</p>
+                                <p class="text-sm text-text-secondary">Items per Order</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Toolbar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-border shadow-modal lg:hidden">
+        <div class="flex items-center justify-around py-2">
+            <a href="dashboard_homepage.html" class="flex-1 flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                </svg>
+                <span class="text-xs">Dashboard</span>
+            </a>
+            <button class="flex-1 flex flex-col items-center py-2 text-primary">
+                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                </svg>
+                <span class="text-xs font-medium">Analytics</span>
+            
+            </button><button class="flex-1 flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                </svg>
+                <span class="text-xs">Export</span>
+            </button>
+        </div>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

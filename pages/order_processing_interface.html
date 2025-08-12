@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Processing - OrderFlow Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Forderflow3893back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header -->
+    <header class="bg-surface border-b border-border shadow-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Branding -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h1 class="ml-2 text-xl font-bold text-primary">OrderFlow Pro</h1>
+                    </div>
+                    <span class="hidden md:block text-sm text-text-secondary italic">Your restaurant's digital backbone</span>
+                </div>
+
+                <!-- Order Status & Actions -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <span class="text-sm text-text-secondary">Table:</span>
+                        <select class="text-sm font-medium text-text-primary bg-transparent border border-border rounded px-2 py-1">
+                            <option>Select Table</option>
+                            <option>Table 1</option>
+                            <option>Table 2</option>
+                            <option>Table 3</option>
+                            <option>Takeaway</option>
+                            <option>Delivery</option>
+                        </select>
+                    </div>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors" title="Voice Input">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11a7 7 0 01-7 7m0 0a7 7 0 01-7-7m7 7v4m0 0H8m4 0h4m-4-8a3 3 0 01-3-3V5a3 3 0 116 0v6a3 3 0 01-3 3z"/>
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors" title="Keyboard Shortcuts">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-surface border-r border-border shadow-subtle">
+            <nav class="mt-6 px-4">
+                <div class="space-y-2">
+                    <a href="dashboard_homepage.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="order_processing_interface.html" class="flex items-center px-4 py-3 text-sm font-medium text-primary bg-primary-50 rounded-lg">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                        Order Processing
+                    </a>
+                    <a href="menu_management_center.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        Menu Management
+                    </a>
+                    <a href="analytics_dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        Analytics
+                    </a>
+                    <a href="receipt_designer_studio.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Receipt Designer
+                    </a>
+                </div>
+
+                <!-- Quick Actions Section -->
+                <div class="mt-8 pt-6 border-t border-border">
+                    <h3 class="px-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Quick Actions</h3>
+                    <div class="mt-3 space-y-2">
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                            </svg>
+                            Reprint Receipt
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-warning hover:bg-warning-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            Inventory Alerts
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-error hover:bg-error-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.196l2.196 2.196M12 19.608l2.196 2.196M2.196 12l2.196-2.196M19.608 12l2.196 2.196"/>
+                            </svg>
+                            Emergency Support
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content - Split Screen Layout -->
+        <main class="flex-1 flex overflow-hidden">
+            <!-- Left Panel - Menu Items -->
+            <div class="flex-1 flex flex-col bg-background">
+                <!-- Menu Categories -->
+                <div class="bg-surface border-b border-border p-4">
+                    <div class="flex items-center justify-between mb-4">
+                        <h2 class="text-lg font-semibold text-text-primary">Menu Items</h2>
+                        <div class="flex items-center space-x-2">
+                            <input type="text" placeholder="Search menu items..." class="input-field w-64" />
+                            <button class="p-2 bg-primary text-white rounded hover:bg-primary-700 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="flex space-x-2 overflow-x-auto">
+                        <button class="px-4 py-2 bg-primary text-white rounded-lg font-medium whitespace-nowrap">All Items</button>
+                        <button class="px-4 py-2 bg-surface border border-border text-text-primary rounded-lg font-medium hover:bg-primary-50 transition-colors whitespace-nowrap">Appetizers</button>
+                        <button class="px-4 py-2 bg-surface border border-border text-text-primary rounded-lg font-medium hover:bg-primary-50 transition-colors whitespace-nowrap">Main Course</button>
+                        <button class="px-4 py-2 bg-surface border border-border text-text-primary rounded-lg font-medium hover:bg-primary-50 transition-colors whitespace-nowrap">Beverages</button>
+                        <button class="px-4 py-2 bg-surface border border-border text-text-primary rounded-lg font-medium hover:bg-primary-50 transition-colors whitespace-nowrap">Desserts</button>
+                    </div>
+                </div>
+
+                <!-- Menu Items Grid -->
+                <div class="flex-1 overflow-y-auto p-4">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <!-- Menu Item Card 1 -->
+                        <div class="card-elevated p-4 hover:shadow-modal transition-shadow cursor-pointer" onclick="addToOrder('paneer-tikka', 'Paneer Tikka', 350)">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-text-primary mb-1">Paneer Tikka</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Marinated cottage cheese grilled to perfection</p>
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="text-xs bg-success-100 text-success-700 px-2 py-1 rounded">Vegetarian</span>
+                                        <span class="text-xs bg-warning-100 text-warning-700 px-2 py-1 rounded">Spicy</span>
+                                    </div>
+                                </div>
+                                <img src="https://images.pexels.com/photos/5560763/pexels-photo-5560763.jpeg?auto=compress&cs=tinysrgb&w=150&h=150&fit=crop" alt="Paneer Tikka" class="w-16 h-16 rounded-lg object-cover ml-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-primary font-mono">₹350.00</span>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+                                    <span class="text-xs text-success-600">Available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item Card 2 -->
+                        <div class="card-elevated p-4 hover:shadow-modal transition-shadow cursor-pointer" onclick="addToOrder('butter-chicken', 'Butter Chicken', 420)">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-text-primary mb-1">Butter Chicken</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Creamy tomato-based curry with tender chicken</p>
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="text-xs bg-error-100 text-error-700 px-2 py-1 rounded">Non-Veg</span>
+                                        <span class="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded">Mild</span>
+                                    </div>
+                                </div>
+                                <img src="https://images.pixabay.com/photo/2018/03/23/08/27/curry-3252122_150.jpg" alt="Butter Chicken" class="w-16 h-16 rounded-lg object-cover ml-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-primary font-mono">₹420.00</span>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+                                    <span class="text-xs text-success-600">Available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item Card 3 -->
+                        <div class="card-elevated p-4 hover:shadow-modal transition-shadow cursor-pointer" onclick="addToOrder('masala-chai', 'Masala Chai', 80)">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-text-primary mb-1">Masala Chai</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Traditional spiced tea with aromatic herbs</p>
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="text-xs bg-success-100 text-success-700 px-2 py-1 rounded">Vegetarian</span>
+                                        <span class="text-xs bg-secondary-100 text-secondary-700 px-2 py-1 rounded">Hot</span>
+                                    </div>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1571934811356-5cc061b6821f?w=150&h=150&fit=crop&crop=center" alt="Masala Chai" class="w-16 h-16 rounded-lg object-cover ml-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-primary font-mono">₹80.00</span>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+                                    <span class="text-xs text-success-600">Available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item Card 4 -->
+                        <div class="card-elevated p-4 hover:shadow-modal transition-shadow cursor-pointer" onclick="addToOrder('biryani', 'Chicken Biryani', 380)">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-text-primary mb-1">Chicken Biryani</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Fragrant basmati rice with spiced chicken</p>
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="text-xs bg-error-100 text-error-700 px-2 py-1 rounded">Non-Veg</span>
+                                        <span class="text-xs bg-warning-100 text-warning-700 px-2 py-1 rounded">Spicy</span>
+                                    </div>
+                                </div>
+                                <img src="https://images.pexels.com/photos/1624487/pexels-photo-1624487.jpeg?w=150&h=150&fit=crop&crop=center" alt="Chicken Biryani" class="w-16 h-16 rounded-lg object-cover ml-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-primary font-mono">₹380.00</span>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-2 h-2 bg-warning-500 rounded-full"></div>
+                                    <span class="text-xs text-warning-600">Low Stock</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item Card 5 -->
+                        <div class="card-elevated p-4 hover:shadow-modal transition-shadow cursor-pointer" onclick="addToOrder('gulab-jamun', 'Gulab Jamun', 120)">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-text-primary mb-1">Gulab Jamun</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Sweet milk dumplings in rose-flavored syrup</p>
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="text-xs bg-success-100 text-success-700 px-2 py-1 rounded">Vegetarian</span>
+                                        <span class="text-xs bg-accent-100 text-accent-700 px-2 py-1 rounded">Sweet</span>
+                                    </div>
+                                </div>
+                                <img src="https://images.pixabay.com/photo/2020/01/27/07/50/gulab-jamun-4795842_150.jpg" alt="Gulab Jamun" class="w-16 h-16 rounded-lg object-cover ml-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-primary font-mono">₹120.00</span>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+                                    <span class="text-xs text-success-600">Available</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Menu Item Card 6 -->
+                        <div class="card-elevated p-4 hover:shadow-modal transition-shadow cursor-pointer" onclick="addToOrder('dal-makhani', 'Dal Makhani', 280)">
+                            <div class="flex items-start justify-between mb-3">
+                                <div class="flex-1">
+                                    <h3 class="font-semibold text-text-primary mb-1">Dal Makhani</h3>
+                                    <p class="text-sm text-text-secondary mb-2">Creamy black lentils slow-cooked with spices</p>
+                                    <div class="flex items-center space-x-2 mb-2">
+                                        <span class="text-xs bg-success-100 text-success-700 px-2 py-1 rounded">Vegetarian</span>
+                                        <span class="text-xs bg-primary-100 text-primary-700 px-2 py-1 rounded">Mild</span>
+                                    </div>
+                                </div>
+                                <img src="https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=150&h=150&fit=crop&crop=center" alt="Dal Makhani" class="w-16 h-16 rounded-lg object-cover ml-3" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                            </div>
+                            <div class="flex items-center justify-between">
+                                <span class="text-lg font-bold text-primary font-mono">₹280.00</span>
+                                <div class="flex items-center space-x-1">
+                                    <div class="w-2 h-2 bg-success-500 rounded-full"></div>
+                                    <span class="text-xs text-success-600">Available</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel - Order Summary -->
+            <div class="w-96 bg-surface border-l border-border flex flex-col">
+                <!-- Order Header -->
+                <div class="p-4 border-b border-border">
+                    <div class="flex items-center justify-between mb-2">
+                        <h3 class="text-lg font-semibold text-text-primary">Current Order</h3>
+                        <button class="text-sm text-error hover:text-error-700 font-medium" onclick="clearOrder()">Clear All</button>
+                    </div>
+                    <div class="flex items-center space-x-2 text-sm text-text-secondary">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                        </svg>
+                        <span id="orderTime">Started: 6:15 PM</span>
+                    </div>
+                </div>
+
+                <!-- Order Items -->
+                <div class="flex-1 overflow-y-auto p-4" id="orderItems">
+                    <div class="text-center text-text-secondary py-8">
+                        <svg class="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                        <p>No items added yet</p>
+                        <p class="text-sm">Select items from the menu to start</p>
+                    </div>
+                </div>
+
+                <!-- Quick Modifications -->
+                <div class="p-4 border-t border-border">
+                    <h4 class="text-sm font-semibold text-text-primary mb-3">Quick Modifications</h4>
+                    <div class="grid grid-cols-2 gap-2 mb-4">
+                        <button class="px-3 py-2 text-xs bg-warning-100 text-warning-700 rounded-lg hover:bg-warning-200 transition-colors">Extra Spicy</button>
+                        <button class="px-3 py-2 text-xs bg-primary-100 text-primary-700 rounded-lg hover:bg-primary-200 transition-colors">Mild</button>
+                        <button class="px-3 py-2 text-xs bg-secondary-100 text-secondary-700 rounded-lg hover:bg-secondary-200 transition-colors">No Onion</button>
+                        <button class="px-3 py-2 text-xs bg-accent-100 text-accent-700 rounded-lg hover:bg-accent-200 transition-colors">Less Oil</button>
+                    </div>
+                    <textarea placeholder="Special instructions..." class="w-full input-field text-sm h-20 resize-none"></textarea>
+                </div>
+
+                <!-- Order Summary -->
+                <div class="p-4 border-t border-border bg-background">
+                    <div class="space-y-2 mb-4">
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">Subtotal:</span>
+                            <span class="font-mono" id="subtotal">₹0.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">CGST (9%):</span>
+                            <span class="font-mono" id="cgst">₹0.00</span>
+                        </div>
+                        <div class="flex justify-between text-sm">
+                            <span class="text-text-secondary">SGST (9%):</span>
+                            <span class="font-mono" id="sgst">₹0.00</span>
+                        </div>
+                        <div class="border-t border-border pt-2">
+                            <div class="flex justify-between font-semibold">
+                                <span>Total:</span>
+                                <span class="font-mono text-lg" id="total">₹0.00</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div class="mb-4">
+                        <h4 class="text-sm font-semibold text-text-primary mb-2">Payment Method</h4>
+                        <div class="grid grid-cols-3 gap-2">
+                            <button class="p-2 border border-border rounded-lg hover:border-primary hover:bg-primary-50 transition-colors text-xs font-medium">
+                                <svg class="w-4 h-4 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 10h18M7 15h1m4 0h1m-7 4h12a3 3 0 003-3V8a3 3 0 00-3-3H6a3 3 0 00-3 3v8a3 3 0 003 3z"/>
+                                </svg>
+                                Card
+                            </button>
+                            <button class="p-2 border border-border rounded-lg hover:border-primary hover:bg-primary-50 transition-colors text-xs font-medium">
+                                <svg class="w-4 h-4 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"/>
+                                </svg>
+                                UPI
+                            </button>
+                            <button class="p-2 border border-border rounded-lg hover:border-primary hover:bg-primary-50 transition-colors text-xs font-medium">
+                                <svg class="w-4 h-4 mx-auto mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-3a2 2 0 00-2-2H9a2 2 0 00-2 2v3a2 2 0 002 2z"/>
+                                </svg>
+                                Cash
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="space-y-2">
+                        <button class="w-full btn-secondary py-3 text-lg font-semibold" onclick="processOrder()">
+                            <svg class="w-5 h-5 mr-2 inline" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                            </svg>
+                            Process Order
+                        </button>
+                        <div class="grid grid-cols-2 gap-2">
+                            <button class="btn-primary py-2 text-sm" onclick="saveOrder()">Save Order</button>
+                            <button class="bg-surface border border-border text-text-primary py-2 text-sm rounded hover:bg-primary-50 transition-colors" onclick="printKOT()">Print KOT</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Toolbar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-border shadow-modal lg:hidden">
+        <div class="flex items-center justify-around py-2">
+            <button class="flex-1 flex flex-col items-center py-2 text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                </svg>
+                <span class="text-xs font-medium">Add Item</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center py-2 text-text-secondary" onclick="processOrder()">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+                </svg>
+                <span class="text-xs">Process</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center py-2 text-text-secondary" onclick="printKOT()">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+                <span class="text-xs">Print KOT</span>
+            </button>
+        </div>
+    </div>
+
+    <script>
+        let currentOrder = [];
+        let orderTotal = 0;
+
+        function addToOrder(id, name, price) {
+            const existingItem = currentOrder.find(item => item.id === id);
+            
+            if (existingItem) {
+                existingItem.quantity += 1;
+            } else {
+                currentOrder.push({
+                    id: id,
+                    name: name,
+                    price: price,
+                    quantity: 1
+                });
+            }
+            
+            updateOrderDisplay();
+        }
+
+        function removeFromOrder(id) {
+            const itemIndex = currentOrder.findIndex(item => item.id === id);
+            if (itemIndex > -1) {
+                if (currentOrder[itemIndex].quantity > 1) {
+                    currentOrder[itemIndex].quantity -= 1;
+                } else {
+                    currentOrder.splice(itemIndex, 1);
+                }
+            }
+            updateOrderDisplay();
+        }
+
+        function updateOrderDisplay() {
+            const orderItemsContainer = document.getElementById('orderItems');
+            
+            if (currentOrder.length === 0) {
+                orderItemsContainer.innerHTML = `
+                    <div class="text-center text-text-secondary py-8">
+                        <svg class="w-12 h-12 mx-auto mb-3 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+                        </svg>
+                        <p>No items added yet</p>
+                        <p class="text-sm">Select items from the menu to start</p>
+                    </div>
+                `;
+            } else {
+                orderItemsContainer.innerHTML = currentOrder.map(item => `
+                    <div class="flex items-center justify-between p-3 border border-border rounded-lg mb-2">
+                        <div class="flex-1">
+                            <h4 class="font-medium text-text-primary">${item.name}</h4>
+                            <p class="text-sm text-text-secondary font-mono">₹${item.price.toFixed(2)} each</p>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <button onclick="removeFromOrder('${item.id}')" class="w-8 h-8 flex items-center justify-center bg-error-100 text-error-600 rounded-full hover:bg-error-200 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 12H4"/>
+                                </svg>
+                            </button>
+                            <span class="w-8 text-center font-medium">${item.quantity}</span>
+                            <button onclick="addToOrder('${item.id}', '${item.name}', ${item.price})" class="w-8 h-8 flex items-center justify-center bg-success-100 text-success-600 rounded-full hover:bg-success-200 transition-colors">
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+            
+            updateTotals();
+        }
+
+        function updateTotals() {
+            const subtotal = currentOrder.reduce((sum, item) => sum + (item.price * item.quantity), 0);
+            const cgst = subtotal * 0.09;
+            const sgst = subtotal * 0.09;
+            const total = subtotal + cgst + sgst;
+            
+            document.getElementById('subtotal').textContent = `₹${subtotal.toFixed(2)}`;
+            document.getElementById('cgst').textContent = `₹${cgst.toFixed(2)}`;
+            document.getElementById('sgst').textContent = `₹${sgst.toFixed(2)}`;
+            document.getElementById('total').textContent = `₹${total.toFixed(2)}`;
+            
+            orderTotal = total;
+        }
+
+        function clearOrder() {
+            if (confirm('Are you sure you want to clear all items?')) {
+                currentOrder = [];
+                updateOrderDisplay();
+            }
+        }
+
+        function processOrder() {
+            if (currentOrder.length === 0) {
+                alert('Please add items to the order first.');
+                return;
+            }
+            
+            alert(`Order processed successfully! Total: ₹${orderTotal.toFixed(2)}`);
+            currentOrder = [];
+            updateOrderDisplay();
+        }
+
+        function saveOrder() {
+            if (currentOrder.length === 0) {
+                alert('No items to save.');
+                return;
+            }
+            
+            alert('Order saved successfully!');
+        }
+
+        function printKOT() {
+            if (currentOrder.length === 0) {
+                alert('No items to print.');
+                return;
+            }
+            
+            alert('Kitchen Order Ticket printed successfully!');
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            updateOrderDisplay();
+        });
+    </script>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

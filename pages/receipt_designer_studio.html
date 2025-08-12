@@ -1,0 +1,635 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Receipt Designer Studio - OrderFlow Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Forderflow3893back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header -->
+    <header class="bg-surface border-b border-border shadow-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Branding -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h1 class="ml-2 text-xl font-bold text-primary">OrderFlow Pro</h1>
+                    </div>
+                    <span class="hidden md:block text-sm text-text-secondary italic">Your restaurant's digital backbone</span>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <span class="text-sm text-text-secondary">Welcome back,</span>
+                        <span class="text-sm font-medium text-text-primary">Manager Sarah</span>
+                    </div>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 19h6v-2H4v2zM4 15h8v-2H4v2zM4 11h10V9H4v2z"/>
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-surface border-r border-border shadow-subtle">
+            <nav class="mt-6 px-4">
+                <div class="space-y-2">
+                    <a href="dashboard_homepage.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="order_processing_interface.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                        Order Processing
+                    </a>
+                    <a href="menu_management_center.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        Menu Management
+                    </a>
+                    <a href="analytics_dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        Analytics
+                    </a>
+                    <a href="receipt_designer_studio.html" class="flex items-center px-4 py-3 text-sm font-medium text-primary bg-primary-50 rounded-lg">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Receipt Designer
+                    </a>
+                </div>
+
+                <!-- Quick Actions Section -->
+                <div class="mt-8 pt-6 border-t border-border">
+                    <h3 class="px-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Quick Actions</h3>
+                    <div class="mt-3 space-y-2">
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                            </svg>
+                            Test Print Receipt
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-secondary hover:bg-secondary-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12"/>
+                            </svg>
+                            Export Template
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-accent hover:bg-accent-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/>
+                            </svg>
+                            Duplicate Template
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="p-6">
+                <!-- Header Section -->
+                <div class="mb-8">
+                    <div class="flex items-center justify-between">
+                        <div>
+                            <h2 class="text-2xl font-bold text-text-primary mb-2">Receipt Designer Studio</h2>
+                            <p class="text-text-secondary">Create and customize professional receipt templates for your restaurant</p>
+                        </div>
+                        <div class="flex items-center space-x-3">
+                            <button class="px-4 py-2 text-sm font-medium text-text-secondary border border-border rounded-lg hover:bg-primary-50 hover:text-primary transition-colors">
+                                <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                                </svg>
+                                Preview
+                            </button>
+                            <button class="px-4 py-2 text-sm font-medium bg-secondary text-white rounded-lg hover:bg-secondary-600 transition-colors">
+                                <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"/>
+                                </svg>
+                                Save Template
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Selection -->
+                <div class="mb-8">
+                    <div class="card-elevated">
+                        <div class="p-4 border-b border-border">
+                            <h3 class="text-lg font-semibold text-text-primary">Template Selection</h3>
+                            <p class="text-sm text-text-secondary">Choose a base template to start customizing</p>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                                <!-- Thermal 58mm Template -->
+                                <div class="border-2 border-primary bg-primary-50 rounded-lg p-4 cursor-pointer transition-colors">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h4 class="font-semibold text-text-primary">Thermal 58mm</h4>
+                                        <div class="w-4 h-4 bg-primary rounded-full flex items-center justify-center">
+                                            <svg class="w-2 h-2 text-white" fill="currentColor" viewBox="0 0 8 8">
+                                                <path d="M6.564.75l-3.59 3.612-1.538-1.55L0 4.26l2.974 2.99L8 2.193z"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="bg-white rounded border p-3 mb-3">
+                                        <div class="text-xs text-center space-y-1">
+                                            <div class="font-bold">Restaurant Name</div>
+                                            <div class="text-gray-500">Address Line</div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="text-left">Item 1 - ₹100</div>
+                                            <div class="text-left">Item 2 - ₹150</div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="font-bold">Total: ₹250</div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-text-secondary">Compact format for small thermal printers</p>
+                                </div>
+
+                                <!-- Thermal 80mm Template -->
+                                <div class="border-2 border-border hover:border-primary rounded-lg p-4 cursor-pointer transition-colors">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h4 class="font-semibold text-text-primary">Thermal 80mm</h4>
+                                        <div class="w-4 h-4 border-2 border-border rounded-full"></div>
+                                    </div>
+                                    <div class="bg-white rounded border p-3 mb-3">
+                                        <div class="text-xs text-center space-y-1">
+                                            <div class="font-bold text-sm">Restaurant Name</div>
+                                            <div class="text-gray-500">Full Address Line</div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="flex justify-between">
+                                                <span>Item Name</span>
+                                                <span>₹100.00</span>
+                                            </div>
+                                            <div class="flex justify-between">
+                                                <span>Another Item</span>
+                                                <span>₹150.00</span>
+                                            </div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="flex justify-between font-bold">
+                                                <span>Total</span>
+                                                <span>₹250.00</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-text-secondary">Standard format with more space for details</p>
+                                </div>
+
+                                <!-- Digital Receipt Template -->
+                                <div class="border-2 border-border hover:border-primary rounded-lg p-4 cursor-pointer transition-colors">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h4 class="font-semibold text-text-primary">Digital Receipt</h4>
+                                        <div class="w-4 h-4 border-2 border-border rounded-full"></div>
+                                    </div>
+                                    <div class="bg-white rounded border p-3 mb-3">
+                                        <div class="text-xs space-y-2">
+                                            <div class="text-center">
+                                                <div class="w-8 h-8 bg-primary rounded mx-auto mb-1"></div>
+                                                <div class="font-bold">Restaurant Name</div>
+                                                <div class="text-gray-500">contact@restaurant.com</div>
+                                            </div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="space-y-1">
+                                                <div class="flex justify-between">
+                                                    <span>Delicious Item</span>
+                                                    <span>₹100.00</span>
+                                                </div>
+                                                <div class="flex justify-between font-bold">
+                                                    <span>Total</span>
+                                                    <span>₹100.00</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <p class="text-xs text-text-secondary">Rich format for email/SMS delivery</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Designer Interface -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- Design Controls -->
+                    <div class="lg:col-span-1 space-y-6">
+                        <!-- Branding Section -->
+                        <div class="card-elevated">
+                            <div class="p-4 border-b border-border">
+                                <h3 class="text-lg font-semibold text-text-primary">Branding</h3>
+                            </div>
+                            <div class="p-4 space-y-4">
+                                <!-- Logo Upload -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Restaurant Logo</label>
+                                    <div class="border-2 border-dashed border-border rounded-lg p-4 text-center hover:border-primary transition-colors cursor-pointer">
+                                        <svg class="w-8 h-8 text-text-secondary mx-auto mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                        </svg>
+                                        <p class="text-sm text-text-secondary">Click to upload logo</p>
+                                        <p class="text-xs text-text-secondary mt-1">PNG, JPG up to 2MB</p>
+                                    </div>
+                                </div>
+
+                                <!-- Restaurant Name -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Restaurant Name</label>
+                                    <input type="text" class="input-field w-full" value="The Fusion Cubes" placeholder="Enter restaurant name" />
+                                </div>
+
+                                <!-- Address -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Address</label>
+                                    <textarea class="input-field w-full h-20 resize-none" placeholder="Enter complete address">123 Food Street, Culinary District
+Mumbai, Maharashtra 400001</textarea>
+                                </div>
+
+                                <!-- Contact Info -->
+                                <div class="grid grid-cols-2 gap-3">
+                                    <div>
+                                        <label class="block text-sm font-medium text-text-primary mb-2">Phone</label>
+                                        <input type="text" class="input-field w-full" value="+91 98765 43210" placeholder="Phone number" />
+                                    </div>
+                                    <div>
+                                        <label class="block text-sm font-medium text-text-primary mb-2">Email</label>
+                                        <input type="email" class="input-field w-full" value="orders@fusioncubes.com" placeholder="Email address" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Formatting Options -->
+                        <div class="card-elevated">
+                            <div class="p-4 border-b border-border">
+                                <h3 class="text-lg font-semibold text-text-primary">Formatting</h3>
+                            </div>
+                            <div class="p-4 space-y-4">
+                                <!-- Font Selection -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Font Family</label>
+                                    <select class="input-field w-full">
+                                        <option value="inter">Inter (Recommended)</option>
+                                        <option value="arial">Arial</option>
+                                        <option value="helvetica">Helvetica</option>
+                                        <option value="times">Times New Roman</option>
+                                        <option value="courier">Courier New</option>
+                                    </select>
+                                </div>
+
+                                <!-- Color Scheme -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Color Scheme</label>
+                                    <div class="grid grid-cols-4 gap-2">
+                                        <div class="w-8 h-8 bg-primary rounded border-2 border-primary cursor-pointer"></div>
+                                        <div class="w-8 h-8 bg-secondary rounded border-2 border-border hover:border-secondary cursor-pointer"></div>
+                                        <div class="w-8 h-8 bg-success rounded border-2 border-border hover:border-success cursor-pointer"></div>
+                                        <div class="w-8 h-8 bg-gray-800 rounded border-2 border-border hover:border-gray-800 cursor-pointer"></div>
+                                    </div>
+                                </div>
+
+                                <!-- Language Options -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Language Support</label>
+                                    <div class="space-y-2">
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" checked />
+                                            <span class="ml-2 text-sm text-text-primary">English</span>
+                                        </label>
+                                        <label class="flex items-center">
+                                            <input type="checkbox" class="rounded border-border text-primary focus:ring-primary" />
+                                            <span class="ml-2 text-sm text-text-primary">हिंदी (Hindi)</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Footer Customization -->
+                        <div class="card-elevated">
+                            <div class="p-4 border-b border-border">
+                                <h3 class="text-lg font-semibold text-text-primary">Footer Content</h3>
+                            </div>
+                            <div class="p-4 space-y-4">
+                                <!-- Thank You Message -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Thank You Message</label>
+                                    <input type="text" class="input-field w-full" value="Thank you for dining with us!" placeholder="Custom thank you message" />
+                                </div>
+
+                                <!-- Social Media -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">Social Media</label>
+                                    <input type="text" class="input-field w-full" value="@fusioncubes" placeholder="Social media handle" />
+                                </div>
+
+                                <!-- QR Code Options -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">QR Code</label>
+                                    <select class="input-field w-full">
+                                        <option value="none">No QR Code</option>
+                                        <option value="menu">Digital Menu</option>
+                                        <option value="feedback">Feedback Form</option>
+                                        <option value="loyalty">Loyalty Program</option>
+                                        <option value="website">Restaurant Website</option>
+                                    </select>
+                                </div>
+
+                                <!-- GST Information -->
+                                <div>
+                                    <label class="block text-sm font-medium text-text-primary mb-2">GST Number</label>
+                                    <input type="text" class="input-field w-full" value="27AABCU9603R1ZX" placeholder="GST registration number" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Live Preview -->
+                    <div class="lg:col-span-2">
+                        <div class="card-elevated">
+                            <div class="p-4 border-b border-border">
+                                <div class="flex items-center justify-between">
+                                    <h3 class="text-lg font-semibold text-text-primary">Live Preview</h3>
+                                    <div class="flex items-center space-x-2">
+                                        <button class="px-3 py-1 text-xs font-medium bg-primary-100 text-primary rounded">58mm</button>
+                                        <button class="px-3 py-1 text-xs font-medium text-text-secondary hover:bg-primary-100 hover:text-primary rounded transition-colors">80mm</button>
+                                        <button class="px-3 py-1 text-xs font-medium text-text-secondary hover:bg-primary-100 hover:text-primary rounded transition-colors">Digital</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="p-6">
+                                <!-- Receipt Preview -->
+                                <div class="max-w-sm mx-auto bg-white border-2 border-dashed border-border rounded-lg p-6 font-mono text-sm">
+                                    <!-- Header -->
+                                    <div class="text-center mb-4">
+                                        <div class="w-12 h-12 bg-primary rounded-full mx-auto mb-2 flex items-center justify-center">
+                                            <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                                            </svg>
+                                        </div>
+                                        <h4 class="font-bold text-lg text-text-primary">The Fusion Cubes</h4>
+                                        <p class="text-xs text-text-secondary leading-relaxed">123 Food Street, Culinary District<br />Mumbai, Maharashtra 400001</p>
+                                        <p class="text-xs text-text-secondary">Ph: +91 98765 43210</p>
+                                        <p class="text-xs text-text-secondary">Email: orders@fusioncubes.com</p>
+                                    </div>
+
+                                    <!-- Order Details -->
+                                    <div class="border-t border-dashed border-gray-300 pt-3 mb-3">
+                                        <div class="flex justify-between text-xs mb-1">
+                                            <span>Order #ORD-2847</span>
+                                            <span>12/08/2025 18:15</span>
+                                        </div>
+                                        <div class="flex justify-between text-xs mb-2">
+                                            <span>Table: 12</span>
+                                            <span>Server: Raj</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Items -->
+                                    <div class="space-y-2 mb-3">
+                                        <div class="flex justify-between">
+                                            <div class="flex-1">
+                                                <div class="text-xs font-medium">Paneer Tikka Masala</div>
+                                                <div class="text-xs text-text-secondary">Qty: 2 × ₹180.00</div>
+                                            </div>
+                                            <div class="text-xs font-medium">₹360.00</div>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <div class="flex-1">
+                                                <div class="text-xs font-medium">Butter Naan</div>
+                                                <div class="text-xs text-text-secondary">Qty: 3 × ₹45.00</div>
+                                            </div>
+                                            <div class="text-xs font-medium">₹135.00</div>
+                                        </div>
+                                        <div class="flex justify-between">
+                                            <div class="flex-1">
+                                                <div class="text-xs font-medium">Mango Lassi</div>
+                                                <div class="text-xs text-text-secondary">Qty: 2 × ₹85.00</div>
+                                            </div>
+                                            <div class="text-xs font-medium">₹170.00</div>
+                                        </div>
+                                    </div>
+
+                                    <!-- Totals -->
+                                    <div class="border-t border-dashed border-gray-300 pt-3 mb-3 space-y-1">
+                                        <div class="flex justify-between text-xs">
+                                            <span>Subtotal:</span>
+                                            <span>₹665.00</span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span>CGST (9%):</span>
+                                            <span>₹59.85</span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span>SGST (9%):</span>
+                                            <span>₹59.85</span>
+                                        </div>
+                                        <div class="flex justify-between text-xs font-bold border-t border-dashed border-gray-300 pt-1">
+                                            <span>Total:</span>
+                                            <span>₹784.70</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Payment Info -->
+                                    <div class="border-t border-dashed border-gray-300 pt-3 mb-3">
+                                        <div class="flex justify-between text-xs">
+                                            <span>Payment Method:</span>
+                                            <span>UPI</span>
+                                        </div>
+                                        <div class="flex justify-between text-xs">
+                                            <span>Transaction ID:</span>
+                                            <span>TXN123456789</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Footer -->
+                                    <div class="border-t border-dashed border-gray-300 pt-3 text-center">
+                                        <p class="text-xs text-text-primary mb-2">Thank you for dining with us!</p>
+                                        <p class="text-xs text-text-secondary mb-2">Follow us @fusioncubes</p>
+                                        
+                                        <!-- QR Code Placeholder -->
+                                        <div class="w-16 h-16 bg-gray-200 mx-auto mb-2 flex items-center justify-center">
+                                            <svg class="w-8 h-8 text-gray-400" fill="currentColor" viewBox="0 0 24 24">
+                                                <path d="M3 11h8V3H3v8zm2-6h4v4H5V5zM3 21h8v-8H3v8zm2-6h4v4H5v-4zM13 3v8h8V3h-8zm6 6h-4V5h4v4zM13 13h2v2h-2v-2zM15 15h2v2h-2v-2zM13 17h2v2h-2v-2zM15 19h2v2h-2v-2zM17 13h2v2h-2v-2zM19 15h2v2h-2v-2zM17 17h2v2h-2v-2zM19 19h2v2h-2v-2z"/>
+                                            </svg>
+                                        </div>
+                                        <p class="text-xs text-text-secondary">Scan for digital menu</p>
+                                        
+                                        <div class="mt-3 pt-2 border-t border-dashed border-gray-300">
+                                            <p class="text-xs text-text-secondary">GST No: 27AABCU9603R1ZX</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Preview Actions -->
+                                <div class="flex justify-center space-x-3 mt-6">
+                                    <button class="px-4 py-2 text-sm font-medium text-primary border border-primary rounded-lg hover:bg-primary-50 transition-colors">
+                                        <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                                        </svg>
+                                        Test Print
+                                    </button>
+                                    <button class="px-4 py-2 text-sm font-medium text-secondary border border-secondary rounded-lg hover:bg-secondary-50 transition-colors">
+                                        <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                                        </svg>
+                                        Download PDF
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Template Library -->
+                <div class="mt-8">
+                    <div class="card-elevated">
+                        <div class="p-4 border-b border-border">
+                            <div class="flex items-center justify-between">
+                                <div>
+                                    <h3 class="text-lg font-semibold text-text-primary">Saved Templates</h3>
+                                    <p class="text-sm text-text-secondary">Manage your custom receipt templates</p>
+                                </div>
+                                <button class="px-4 py-2 text-sm font-medium bg-primary text-white rounded-lg hover:bg-primary-700 transition-colors">
+                                    <svg class="w-4 h-4 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                    New Template
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6">
+                            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                                <!-- Template 1 -->
+                                <div class="border border-border rounded-lg p-4 hover:border-primary transition-colors">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h4 class="font-semibold text-text-primary">Default Template</h4>
+                                        <div class="flex items-center space-x-2">
+                                            <button class="p-1 text-text-secondary hover:text-primary">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                                </svg>
+                                            </button>
+                                            <button class="p-1 text-text-secondary hover:text-error">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded p-3 mb-3">
+                                        <div class="text-xs text-center space-y-1">
+                                            <div class="font-bold">The Fusion Cubes</div>
+                                            <div class="text-gray-500">Mumbai, Maharashtra</div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="text-left">Paneer Tikka - ₹180</div>
+                                            <div class="text-left">Butter Naan - ₹45</div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="font-bold">Total: ₹225</div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                                        <span>58mm Thermal</span>
+                                        <span>Active</span>
+                                    </div>
+                                </div>
+
+                                <!-- Template 2 -->
+                                <div class="border border-border rounded-lg p-4 hover:border-primary transition-colors">
+                                    <div class="flex items-center justify-between mb-3">
+                                        <h4 class="font-semibold text-text-primary">Premium Template</h4>
+                                        <div class="flex items-center space-x-2">
+                                            <button class="p-1 text-text-secondary hover:text-primary">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"/>
+                                                </svg>
+                                            </button>
+                                            <button class="p-1 text-text-secondary hover:text-error">
+                                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"/>
+                                                </svg>
+                                            </button>
+                                        </div>
+                                    </div>
+                                    <div class="bg-gray-50 rounded p-3 mb-3">
+                                        <div class="text-xs space-y-1">
+                                            <div class="text-center">
+                                                <div class="w-6 h-6 bg-secondary rounded mx-auto mb-1"></div>
+                                                <div class="font-bold">The Fusion Cubes</div>
+                                                <div class="text-gray-500">Premium Dining Experience</div>
+                                            </div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="flex justify-between">
+                                                <span>Signature Dish</span>
+                                                <span>₹350</span>
+                                            </div>
+                                            <div class="border-t border-dashed my-2"></div>
+                                            <div class="flex justify-between font-bold">
+                                                <span>Total</span>
+                                                <span>₹350</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flex items-center justify-between text-xs text-text-secondary">
+                                        <span>Digital Receipt</span>
+                                        <span>Draft</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Toolbar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-border shadow-modal lg:hidden">
+        <div class="flex items-center justify-around py-2">
+            <button class="flex-1 flex flex-col items-center py-2 text-primary">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+                <span class="text-xs font-medium">Test Print</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/>
+                </svg>
+                <span class="text-xs">Preview</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7H5a2 2 0 00-2 2v9a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-3m-1 4l-3-3m0 0l-3 3m3-3v12"/>
+                </svg>
+                <span class="text-xs">Save</span>
+            </button>
+        </div>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>

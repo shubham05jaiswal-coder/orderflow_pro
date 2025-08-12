@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard - OrderFlow Pro</title>
+    <link rel="stylesheet" href="../css/main.css" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Forderflow3893back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-background min-h-screen">
+    <!-- Header -->
+    <header class="bg-surface border-b border-border shadow-subtle">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- Logo and Branding -->
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center">
+                        <svg class="w-8 h-8 text-primary" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                            <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+                        </svg>
+                        <h1 class="ml-2 text-xl font-bold text-primary">OrderFlow Pro</h1>
+                    </div>
+                    <span class="hidden md:block text-sm text-text-secondary italic">Your restaurant's digital backbone</span>
+                </div>
+
+                <!-- User Actions -->
+                <div class="flex items-center space-x-4">
+                    <div class="hidden md:flex items-center space-x-2">
+                        <span class="text-sm text-text-secondary">Welcome back,</span>
+                        <span class="text-sm font-medium text-text-primary">Manager Sarah</span>
+                    </div>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 17h5l-5 5v-5zM4 19h6v-2H4v2zM4 15h8v-2H4v2zM4 11h10V9H4v2z"/>
+                        </svg>
+                    </button>
+                    <button class="p-2 rounded-full hover:bg-primary-50 transition-colors">
+                        <svg class="w-5 h-5 text-text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/>
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="flex h-screen">
+        <!-- Sidebar Navigation -->
+        <aside class="w-64 bg-surface border-r border-border shadow-subtle">
+            <nav class="mt-6 px-4">
+                <div class="space-y-2">
+                    <a href="dashboard_homepage.html" class="flex items-center px-4 py-3 text-sm font-medium text-primary bg-primary-50 rounded-lg">
+                        <svg class="w-5 h-5 mr-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z"/>
+                        </svg>
+                        Dashboard
+                    </a>
+                    <a href="order_processing_interface.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"/>
+                        </svg>
+                        Order Processing
+                    </a>
+                    <a href="menu_management_center.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"/>
+                        </svg>
+                        Menu Management
+                    </a>
+                    <a href="analytics_dashboard.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+                        </svg>
+                        Analytics
+                    </a>
+                    <a href="receipt_designer_studio.html" class="flex items-center px-4 py-3 text-sm font-medium text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                        <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+                        </svg>
+                        Receipt Designer
+                    </a>
+                </div>
+
+                <!-- Quick Actions Section -->
+                <div class="mt-8 pt-6 border-t border-border">
+                    <h3 class="px-4 text-xs font-semibold text-text-secondary uppercase tracking-wider">Quick Actions</h3>
+                    <div class="mt-3 space-y-2">
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-primary hover:bg-primary-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                            </svg>
+                            Reprint Receipt
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-warning hover:bg-warning-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+                            </svg>
+                            Inventory Alerts
+                        </button>
+                        <button class="w-full flex items-center px-4 py-2 text-sm text-text-secondary hover:text-error hover:bg-error-50 rounded-lg transition-colors">
+                            <svg class="w-4 h-4 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.196l2.196 2.196M12 19.608l2.196 2.196M2.196 12l2.196-2.196M19.608 12l2.196 2.196"/>
+                            </svg>
+                            Emergency Support
+                        </button>
+                    </div>
+                </div>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="flex-1 overflow-y-auto">
+            <div class="p-6">
+                <!-- Welcome Section -->
+                <div class="mb-8">
+                    <h2 class="text-2xl font-bold text-text-primary mb-2">Good Evening, Sarah!</h2>
+                    <p class="text-text-secondary">Here's what's happening at your restaurant today.</p>
+                </div>
+
+                <!-- Live Metrics Overview -->
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                    <!-- Today's Sales -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Today's Sales</p>
+                                <p class="text-2xl font-bold text-text-primary font-mono">₹24,580</p>
+                                <p class="text-xs text-success-600 flex items-center mt-1">
+                                    <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                                        <path fill-rule="evenodd" d="M3.293 9.707a1 1 0 010-1.414l6-6a1 1 0 011.414 0l6 6a1 1 0 01-1.414 1.414L11 5.414V17a1 1 0 11-2 0V5.414L4.707 9.707a1 1 0 01-1.414 0z" clip-rule="evenodd"/>
+                                    </svg>
+                                    +12% from yesterday
+                                </p>
+                            </div>
+                            <div class="p-3 bg-primary-100 rounded-full">
+                                <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Orders -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Active Orders</p>
+                                <p class="text-2xl font-bold text-text-primary font-mono">8</p>
+                                <p class="text-xs text-text-secondary mt-1">2 pending, 6 preparing</p>
+                            </div>
+                            <div class="p-3 bg-secondary-100 rounded-full">
+                                <svg class="w-6 h-6 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v10a2 2 0 002 2h8a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Peak Hour Indicator -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Peak Hours</p>
+                                <p class="text-2xl font-bold text-text-primary">7-9 PM</p>
+                                <p class="text-xs text-warning-600 flex items-center mt-1">
+                                    </p><div class="w-2 h-2 bg-warning-500 rounded-full mr-2 animate-pulse"></div>
+                                    Currently in peak
+                                <p></p>
+                            </div>
+                            <div class="p-3 bg-warning-100 rounded-full">
+                                <svg class="w-6 h-6 text-warning-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Staff Online -->
+                    <div class="card-elevated p-6">
+                        <div class="flex items-center justify-between">
+                            <div>
+                                <p class="text-sm font-medium text-text-secondary">Staff Online</p>
+                                <p class="text-2xl font-bold text-text-primary font-mono">5/6</p>
+                                <p class="text-xs text-text-secondary mt-1">All stations covered</p>
+                            </div>
+                            <div class="p-3 bg-success-100 rounded-full">
+                                <svg class="w-6 h-6 text-success-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"/>
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Main Action Area -->
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                    <!-- New Order CTA -->
+                    <div class="lg:col-span-2">
+                        <div class="card-elevated p-8 text-center">
+                            <div class="mb-6">
+                                <div class="inline-flex items-center justify-center w-16 h-16 bg-secondary-100 rounded-full mb-4">
+                                    <svg class="w-8 h-8 text-secondary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                    </svg>
+                                </div>
+                                <h3 class="text-xl font-semibold text-text-primary mb-2">Ready to take a new order?</h3>
+                                <p class="text-text-secondary">Start processing customer orders with our streamlined interface</p>
+                            </div>
+                            <a href="order_processing_interface.html" class="inline-flex items-center justify-center px-8 py-4 bg-secondary text-white font-semibold rounded-lg hover:bg-secondary-600 transition-colors text-lg min-w-48 min-h-12">
+                                <svg class="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
+                                </svg>
+                                New Order
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Real-time Order Queue -->
+                    <div class="lg:col-span-1">
+                        <div class="card-elevated">
+                            <div class="p-4 border-b border-border">
+                                <h3 class="text-lg font-semibold text-text-primary">Live Order Queue</h3>
+                                <p class="text-sm text-text-secondary">Real-time order status</p>
+                            </div>
+                            <div class="p-4 space-y-3 max-h-96 overflow-y-auto">
+                                <!-- Pending Order -->
+                                <div class="flex items-center justify-between p-3 bg-warning-50 border border-warning-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-warning-500 rounded-full animate-pulse"></div>
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">#ORD-2847</p>
+                                            <p class="text-xs text-text-secondary">Table 12 • ₹850</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-medium text-warning-700 bg-warning-100 px-2 py-1 rounded">Pending</span>
+                                </div>
+
+                                <!-- Preparing Orders -->
+                                <div class="flex items-center justify-between p-3 bg-primary-50 border border-primary-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-primary-500 rounded-full animate-pulse"></div>
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">#ORD-2846</p>
+                                            <p class="text-xs text-text-secondary">Table 8 • ₹1,240</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-medium text-primary-700 bg-primary-100 px-2 py-1 rounded">Preparing</span>
+                                </div>
+
+                                <div class="flex items-center justify-between p-3 bg-primary-50 border border-primary-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-primary-500 rounded-full animate-pulse"></div>
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">#ORD-2845</p>
+                                            <p class="text-xs text-text-secondary">Takeaway • ₹650</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-medium text-primary-700 bg-primary-100 px-2 py-1 rounded">Preparing</span>
+                                </div>
+
+                                <!-- Ready Order -->
+                                <div class="flex items-center justify-between p-3 bg-success-50 border border-success-200 rounded-lg">
+                                    <div class="flex items-center space-x-3">
+                                        <div class="w-3 h-3 bg-success-500 rounded-full"></div>
+                                        <div>
+                                            <p class="text-sm font-medium text-text-primary">#ORD-2844</p>
+                                            <p class="text-xs text-text-secondary">Table 5 • ₹920</p>
+                                        </div>
+                                    </div>
+                                    <span class="text-xs font-medium text-success-700 bg-success-100 px-2 py-1 rounded">Ready</span>
+                                </div>
+
+                                <!-- View All Orders Link -->
+                                <div class="pt-2 border-t border-border">
+                                    <a href="order_processing_interface.html" class="block text-center text-sm text-primary hover:text-primary-700 font-medium">
+                                        View All Orders →
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activity -->
+                <div class="mt-8">
+                    <div class="card-elevated">
+                        <div class="p-4 border-b border-border">
+                            <h3 class="text-lg font-semibold text-text-primary">Recent Activity</h3>
+                        </div>
+                        <div class="p-4">
+                            <div class="space-y-4">
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-success-500 rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-text-primary">Order #ORD-2843 completed for Table 3</p>
+                                        <p class="text-xs text-text-secondary">2 minutes ago • ₹1,150</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-primary-500 rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-text-primary">New order #ORD-2847 received from Table 12</p>
+                                        <p class="text-xs text-text-secondary">5 minutes ago • ₹850</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start space-x-3">
+                                    <div class="w-2 h-2 bg-warning-500 rounded-full mt-2"></div>
+                                    <div class="flex-1">
+                                        <p class="text-sm text-text-primary">Low stock alert: Paneer Tikka ingredients</p>
+                                        <p class="text-xs text-text-secondary">12 minutes ago</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Mobile Bottom Toolbar -->
+    <div class="fixed bottom-0 left-0 right-0 bg-surface border-t border-border shadow-modal lg:hidden">
+        <div class="flex items-center justify-around py-2">
+            <a href="order_processing_interface.html" class="flex-1 flex flex-col items-center py-2 text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2L2 7v10c0 5.55 3.84 9.74 9 11 5.16-1.26 9-5.45 9-11V7l-10-5z"/>
+                    <path d="M9 12l2 2 4-4" stroke="white" stroke-width="2" fill="none"/>
+                </svg>
+                <span class="text-xs font-medium">New Order</span>
+            </a>
+            <button class="flex-1 flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
+                </svg>
+                <span class="text-xs">Receipt</span>
+            </button>
+            <button class="flex-1 flex flex-col items-center py-2 text-text-secondary">
+                <svg class="w-6 h-6 mb-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M18.364 5.636l-3.536 3.536m0 5.656l3.536 3.536M9.172 9.172L5.636 5.636m3.536 9.192L5.636 18.364M12 2.196l2.196 2.196M12 19.608l2.196 2.196M2.196 12l2.196-2.196M19.608 12l2.196 2.196"/>
+                </svg>
+                <span class="text-xs">Support</span>
+            </button>
+        </div>
+    </div>
+<script id="dhws-dataInjector" src="../public/dhws-data-injector.js"></script>
+</body>
+</html>
